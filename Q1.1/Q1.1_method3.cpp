@@ -15,6 +15,7 @@ bool check_unique(std::string value){
 
     std::sort (value.begin() , value.end());
 
+    //Checking the neighbouring elements.
     for (int i = 0; i < value.length()-1; ++i)
     {
         if (value[i] == value[i+1])
