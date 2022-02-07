@@ -1,6 +1,6 @@
 //Using an inbuilt string function of C++
 //Time Complexity - O(n) - n = length of string.
-//Space Complexity - O(1)
+//Space Complexity - O(1
 #include<iostream>
 
 
