@@ -1,6 +1,6 @@
 //Brute Force implementation using vectors.
 //Time Complexity - O(n^2) 
-//Space Complexity - 
+//Space Complexity - O(n^2) - Since new pixel matrix is created to store the rotated pixels.
 #include<iostream>
 #include<vector>
 #include<cstdlib>
