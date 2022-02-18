@@ -18,9 +18,12 @@ std::vector<std::vector<int>> fillPixels(int m , int n){
 void rotate(int m , int n ){
 
     std::vector<std::vector<int>> pixels = fillPixels(m , n);   //fill pixel array with random numbers.
-    std::vector<std::vector<int>> rotatedPixels(m , std::vector<int>(n,0));
 
-    if (m!=n) std::cout<<"not a square matrix \n";
+    if (m!=n){
+     std::cout<<"not a square matrix \n";
+     return;
+     }
+
 
     for (int i = 0; i < m; ++i)
     {
