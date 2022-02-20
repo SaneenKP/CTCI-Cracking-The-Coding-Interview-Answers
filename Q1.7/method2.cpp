@@ -22,21 +22,56 @@ void rotate(int m , int n ){
     if (m!=n){
      std::cout<<"not a square matrix \n";
      return;
-     }
+    }
 
-
+    //Not part of the algorithm . 
+    //Only used to display the original matrix.
+    std::cout<<"Original Matrix"<<std::endl<<std::endl;
     for (int i = 0; i < m; ++i)
     {
         for (int j = 0; j < n; ++j)
         {
-            
+            std::cout<<pixels[i][j]<<"   ";
         }
+        std::cout<<std::endl;
+        
+    }
+
+    for (int layer = 0; layer < n/2  ; ++layer)
+    {
+        int first  = layer;
+        int last = n - 1 - layer;
+        for (int i = first ; i < last; ++i)
+        {
+            int offset = i - first;
+            int top = pixels[first][i];
+
+
+            std::cout<<std::endl<<first<<" "<<i<<" =  "<<last-offset<<"    "<<first<<std::endl;
+            std::cout<<last-offset<<" "<<first<<" =  "<<last<<"    "<<last-offset<<std::endl;
+            std::cout<<last<<" "<<last-offset<<" =  "<<i<<"    "<<last<<std::endl;
+            std::cout<<i<<" "<<last<<" =  "<<top<<std::endl;
+            pixels[first][i] = pixels[last-offset][first];
+            pixels[last-offset][first] = pixels[last][last-offset];
+            pixels[last][last-offset] = pixels[i][last];
+            pixels[i][last] = top;
+        }
+    }
+
+     //Not part of the algorithm . 
+    //Only used to display rotated the matrix.
+    std::cout<<std::endl<<"rotated Matrix"<<std::endl<<std::endl;
+    
+    for (int i = 0; i < m; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            std::cout<<pixels[i][j]<<"   ";
+        }
+        std::cout<<std::endl;
         
     }
     
-
-    
-
 }
 
 
