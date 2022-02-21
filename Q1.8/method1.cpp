@@ -21,10 +21,14 @@ void displayMatrix(std::vector<std::vector<int>> matrix , std::string s){
     }
 
 }
+
+//set all the rows of the zeroth column to zero.
 void setRowZero(std::vector<std::vector<int>> &matrix, int row){
     for (int i = 0; i < matrix[0].size(); i++)
         matrix[row][i] = 0;
 }
+
+//set all the elements of the zeroth column to zero.
 void setColumnZero(std::vector<std::vector<int>> &matrix, int column){
     for (int i = 0; i < matrix.size(); i++)
         matrix[i][column] = 0;
@@ -46,7 +50,7 @@ std::vector<std::vector<int>> fillPixels(int m , int n){
 
 void zero(int m , int n){
 
-    std::vector<std::vector<int>> matrix = fillPixels(m , n);
+    std::vector<std::vector<int>> matrix = fillPixels(m , n); // fill the matrix with random values.
     displayMatrix(matrix , "original matrix");
 
     bool row[m] = {false}; // boolean array to store the positions of zero in row.
@@ -57,6 +61,7 @@ void zero(int m , int n){
     {
         for (int j = 0; j < n; ++j)
         {
+            //if found zero , make its index in row array and column array to true.
             if (matrix[i][j] == 0){
                 row[i] = true;
                 column[i] = true;
@@ -64,10 +69,12 @@ void zero(int m , int n){
         }
     }
 
+    //find the indexes of the zero in the row.
     for (int i = 0; i < m; ++i)
         if (row[i])
             setRowZero(matrix , i);
     
+    //find the indexes of the zero in the column.
     for (int j = 0; j < n; ++j)
         if (column[j])
             setColumnZero(matrix , j);
