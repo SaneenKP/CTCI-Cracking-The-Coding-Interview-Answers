@@ -37,7 +37,7 @@ void rotate(int m , int n ){
         
     }
 
-    //For understanding the shiting lets take an example of 4 x 4 matrix.
+    //For understanding the shifting lets take an example of 4 x 4 matrix.
     //the loop iterates from 0 - 2.
     for (int layer = 0; layer < n/2  ; ++layer)
     {
