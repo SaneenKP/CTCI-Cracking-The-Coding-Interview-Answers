@@ -1,3 +1,6 @@
+//Brute force implementation without extra space or datastructure.
+//Time complexity - O(n) - n = no. of elements in the linked list.
+
 #include<iostream>
 
 
@@ -85,7 +88,16 @@ class LinkedList{
         }
     }
 
+    Node* getHead(){
+        return this->head;
+    }
+
 };
+
+void removeDuplicated(LinkedList &ls){
+
+}
+
 
 
 
@@ -104,6 +116,8 @@ int main(){
         ls.insertAtEnd(value);
 
     }
+    ls.display();
+    removeDuplicated(ls);
     ls.display();
 
 }
