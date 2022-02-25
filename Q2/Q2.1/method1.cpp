@@ -1,10 +1,12 @@
 //Brute force implementation without extra space or datastructure.
 //Time complexity - O(n) - n = no. of elements in the linked list.
+//Space complexity - O(1)
 
 #include<iostream>
 
 
-//Node class for each node which holds value and the address of next node.
+//Node implementation.
+//Not part of the algorithm.
 class Node{
 
     private:
@@ -33,8 +35,8 @@ class Node{
 
 };
 
-//Linked List class which connects all of the nodes.
-//head is the root node.
+//Linked List implementation. 
+//Not part of the algorithm.
 class LinkedList{
 
     private:
@@ -94,13 +96,27 @@ class LinkedList{
 
 };
 
+
+//Algorithm for the problem.
+//function the remove duplicates.
 void removeDuplicated(LinkedList &ls){
 
+    Node* currentNode = ls.getHead();                                                //get the head of the linked list in currecnt node pointer.
+
+    while (currentNode != NULL)
+    {
+        Node* nextPointer = currentNode;                                             //second pointer to check the future duplicate values.
+
+        while(nextPointer->getNext() != NULL){
+
+            if (nextPointer->getNext()->getValue() == currentNode->getValue())      //if found duplicate.
+                nextPointer->setNext(nextPointer->getNext()->getNext());            //set the next element to the duplicate as the next element to the pointer. This removes the connection of the duplicate element with the linked list.
+            else
+                nextPointer = nextPointer->getNext();   
+        }
+        currentNode = currentNode->getNext();
+    }
 }
-
-
-
-
 
 int main(){
 
@@ -114,10 +130,12 @@ int main(){
     {
         std::cin>>value;
         ls.insertAtEnd(value);
-
     }
+    std::cout<<"List Before : "<<std::endl;
     ls.display();
     removeDuplicated(ls);
+    std::cout<<std::endl<<"List after : "<<std::endl;
     ls.display();
+    std::cout<<std::endl;
 
 }
