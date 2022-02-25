@@ -1,5 +1,5 @@
 //Brute force implementation without extra space or datastructure.
-//Time complexity - O(n) - n = no. of elements in the linked list.
+//Time complexity - O(n^2) - n = no. of elements in the linked list.
 //Space complexity - O(1)
 
 #include<iostream>
