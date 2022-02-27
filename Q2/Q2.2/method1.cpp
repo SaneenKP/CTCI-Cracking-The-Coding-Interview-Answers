@@ -1,5 +1,5 @@
 //Method in which Size of the linked list is known.
-//time complexity - o(n^2) - n = no. of elements in the linked list.
+//time complexity - o(n) - n = no. of elements in the linked list.
 //Space complexity - O(1)
 
 #include<iostream>
@@ -112,6 +112,7 @@ void fill(LinkedList &ls , int n){
 
 }
 
+//Algorithm to find the k to last element when size is given.
 int getKtoLast(LinkedList &ls , int k , int n){
 
     if(k == n) return ls.getHead()->getValue(); // if the Kth value is the size , then return first element.
