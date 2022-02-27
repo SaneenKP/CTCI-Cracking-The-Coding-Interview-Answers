@@ -1,5 +1,5 @@
-//Brute force implementation without extra space or datastructure.
-//Time complexity - O(n^2) - n = no. of elements in the linked list.
+//Method in which Size of the linked list is known.
+//time complexity - o(n^2) - n = no. of elements in the linked list.
 //Space complexity - O(1)
 
 #include<iostream>
@@ -112,7 +112,17 @@ void fill(LinkedList &ls , int n){
 
 }
 
-int getKtoLast(LinkedList &ls){
+int getKtoLast(LinkedList &ls , int k , int n){
+
+    if(k == n) return ls.getHead()->getValue(); // if the Kth value is the size , then return first element.
+
+    int count = n - k + 1;                      //Calculate the position of the element. and store it in count.
+    Node* temp = ls.getHead();
+
+    while (--count > 0)                         //Iterate the count.
+        temp = temp->getNext();
+
+    return temp->getValue();                    //return the value at the position.
 
 }
 
@@ -124,8 +134,11 @@ int main(){
     std::cin>>n;
     fill(ls , n);
 
+    int k = 0;
+    std::cout<<"\nEnter the Kth element to return : ";
+    std::cin>>k;
 
-    std::cout<<std::endl<<getKtoLast(ls);
+    std::cout<<std::endl<<getKtoLast(ls,k , n);
     std::cout<<std::endl;
 
 }
