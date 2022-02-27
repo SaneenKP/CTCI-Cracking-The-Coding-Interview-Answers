@@ -106,8 +106,9 @@ void fill(LinkedList &ls , int n){
         std::cin>>value;
         ls.insertAtEnd(value);
     }
-    
+
     std::cout<<"List Before : "<<std::endl;
+    ls.display();
 
 }
 
@@ -121,9 +122,9 @@ int main(){
     int n;
     std::cout<<"Enter the size of the list : ";
     std::cin>>n;
-
     fill(ls , n);
-    ls.display();
+
+
     std::cout<<std::endl<<getKtoLast(ls);
     std::cout<<std::endl;
 
