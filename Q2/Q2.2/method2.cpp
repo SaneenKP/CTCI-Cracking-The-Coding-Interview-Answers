@@ -1,6 +1,6 @@
 //Iterative solution when size is not given.
-//time complexity - o(1)
-//Space complexity - O(n) - n = no. of elements in the linked list.
+//time complexity - o(n)- n = no. of elements in the linked list.
+//Space complexity - O(1) 
 
 #include<iostream>
 
@@ -119,11 +119,11 @@ int getKtoLast(Node* head , int k){
     Node* p1 = head;
     Node* p2 = head;
 
-    for (int i = 0; i < k; ++i)
+    for (int i = 0; i < k; ++i) //iterate p1 till it reaches the Kth element.
         p1 = p1->getNext();
     
     while (p1 != NULL){
-        p1 = p1->getNext();
+        p1 = p1->getNext(); 
         p2 = p2->getNext();
     }
     return p2->getValue();
