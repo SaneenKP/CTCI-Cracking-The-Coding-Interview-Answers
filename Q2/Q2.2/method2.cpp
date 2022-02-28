@@ -116,10 +116,17 @@ void fill(LinkedList &ls , int n){
 //Takes head and kth element as argument for recursion.
 int getKtoLast(Node* head , int k){
 
-    
-    
-    
+    Node* p1 = head;
+    Node* p2 = head;
 
+    for (int i = 0; i < k; ++i)
+        p1 = p1->getNext();
+    
+    while (p1 != NULL){
+        p1 = p1->getNext();
+        p2 = p2->getNext();
+    }
+    return p2->getValue();
 }
 
 int main(){
