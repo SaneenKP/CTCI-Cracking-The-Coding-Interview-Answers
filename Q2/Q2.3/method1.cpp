@@ -115,9 +115,9 @@ void fill(LinkedList &ls , int n){
 //Algorithm to delete the middle with only middle node given.
 void deleteMiddle(Node* &middle){
 
-    if (middle->getNext() == NULL) return;
-    middle->setValue(middle->getNext()->getValue());
-    middle->setNext(middle->getNext()->getNext());
+    if (middle->getNext() == NULL) return;            //Cant be deleted if its last node.
+    middle->setValue(middle->getNext()->getValue());  //copy the value from the next node and set it here.
+    middle->setNext(middle->getNext()->getNext());    //set the next pointer to the next next position which delets the next node.
 }
 int main(){
 
